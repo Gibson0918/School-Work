@@ -1,0 +1,46 @@
+#First Approach
+#Prompt for input of one DNA sequence (variable name: dna1) 
+dna = input('Please input yr DNA sequence:')
+dna1 = dna.upper()
+
+#Do not edit/remove the next line
+def calculate_DNAReverseComplement(dna1):  #*** This was part of my learning experience and I found a better way to do it
+                                           #*** I'll just post my thinking process on how I solve this qns here so you would have a better 
+                                           #*** understanding on how I approach the question!                                                                     
+    for i in dna1:                         #*** I'll leave the 'better' code at the bottom
+        while i in range(0,7,1):
+            if i == 'A':
+                dna2= i.replace('A','T')
+            elif i == 'T':
+                dna2 = i.replace('T','A')
+            elif i == 'C':
+                dna2 = i.replace('C','G')
+            else:
+                dna2 = i.replace('G','C')
+
+                print (dna2)
+
+
+
+    #print(dna2) #Modify to display the dna2
+
+    return dna1 
+    
+#Second Approach
+#Prompt for input of one DNA sequence (variable name: dna1)
+dna1 = input('Please input a 7-base long DNA Sequence:')
+dna1=dna1.upper()
+
+#Do not edit/remove the next line
+def calculate_DNAReverseComplement(dna1):
+        dna2 = []
+        for char in dna1:
+            index = base.index(char)
+            dna2.append(complement[index])
+        dna2 = dna2[::-1]
+
+        
+        print('DNA2:',dna2) #Modify to display the dna2
+
+        return dna2 
+        
