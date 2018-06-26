@@ -1,0 +1,60 @@
+#Programming I
+
+#######################
+#    Mission 6.2      #
+#      Calendar       #
+#######################
+
+#Background
+#==========
+#Tom wants to print his own calendar. Write a Python program to  
+#print the month view of a calendar
+#Prompt the user for the number of days in the month and which
+#day of the week does the first day of the month falls on. 
+
+
+#Prompt user to enter number of days and first day of the week
+days =  int(input('Enter number of days:'))
+
+day_of_week = input('The first day of the week:')
+
+def print_calendar(days,day_of_week):
+    print('{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>5}'\
+      .format('Sat','M','T','W','Th','F','Sun'))         #Once again, I'm aware of better solutions out there but I'm restricted to using
+                                                         # loops to formulate a solution, so do bear with me.
+
+    for d in range(1,days+1):
+        if day_of_week =='Sat' and d == 1:
+            print('{:>3}'.format(d),end='')
+        elif day_of_week == 'M' and d ==1:
+            print(' '*3 + '{:>3}'.format(d),end='')
+        elif day_of_week == 'T' and d ==1:
+            print(' '*6 + '{:>3}'.format(d),end='')
+        elif day_of_week == 'W' and d ==1:
+            print(' '*9 + '{:>3}'.format(d),end='')
+        elif day_of_week == 'Th' and d ==1:
+            print(' '*12 + '{:>3}'.format(d),end='')
+        elif day_of_week == 'F' and d ==1:
+            print(' '*15 + '{:>4}'.format(d),end='')
+        elif day_of_week == 'Sun' and d ==1:
+            print(' '*18 + '{:>4}'.format(d),end='')
+        else:
+            print('{:>3}'.format(d),end='')
+
+        if day_of_week == 'Sat' and d%7==0:
+            print()
+        elif day_of_week == 'M' and d%7 ==6:
+            print()
+        elif day_of_week == 'T' and d%7 == 5:
+            print()
+        elif day_of_week == 'W' and d%7 == 4:
+            print()
+        elif day_of_week == 'Th' and d%7 == 3:
+            print()
+        elif day_of_week == 'F' and d%7 == 2:
+            print()
+        elif day_of_week == 'Sun' and d%7 == 1:
+            print()
+        
+#Do not remove the next line
+print_calendar(days,day_of_week)
