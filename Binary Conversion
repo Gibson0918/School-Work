@@ -1,0 +1,35 @@
+#Prompt and obtain input of a 4-digit binary value and assign it to binary_value
+#Note: Do not change the input to int type.
+binary_value =(input('Enter 4-digit binary value:'))
+
+
+
+#Perform Conversion of Binary to Decimal value
+def binaryToDecimal(binary_value):
+    n = 0
+    
+    currentDigit = int(binary_value[3])                      #I'm aware of a more efficient method using loops so I'll post the                                                       
+    decimal_1 = currentDigit * 2**n                          # 'better' solution later in the week
+
+    n=n+1
+
+    currentDigit = int(binary_value[2])
+    decimal_2 = currentDigit * 2**n
+    n=n+1
+    
+    currentDigit = int(binary_value[1])
+    decimal_3 = currentDigit * 2**n
+    n=n+1
+
+    currentDigit = int(binary_value[0])
+    decimal_4 = currentDigit * 2**n
+
+
+    decimal_value = (decimal_1 + decimal_2 + decimal_3 + decimal_4) #Code to do the conversion
+    
+    print(decimal_value) #Modify to display the calculated Decimal value
+
+    return decimal_value
+
+    
+binaryToDecimal(binary_value)
