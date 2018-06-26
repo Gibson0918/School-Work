@@ -1,0 +1,20 @@
+plaintext = str(input('Please input your text:'))
+plaintext = plaintext.upper()
+key = int(input('Enter the number of positions to be shifted:'))
+alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+#Perform Encryption of given plaintext
+def caesarEncrypt(plaintext, key):
+
+    ciphertext = ''
+    for char in plaintext:
+        if char in alphabet:
+            ciphertext += alphabet[(alphabet.index(char)+key)% 26] #Code to do the conversion
+
+    print('Ciphertext:' ,ciphertext) #Modify to display the encrypted result
+
+    return ciphertext #Do not remove this line
+
+    
+#Do not remove the next line
+caesarEncrypt(plaintext,key)
