@@ -1,0 +1,16 @@
+#prompt user to input power rating
+power_rating = float(input('Please enter your device power rating:'))
+#prompt user to input number of hours used per day
+hours_used = float(input('Please enter the hours used per day:'))
+
+
+
+#Perform monthly energy cost calculation 
+def calculate_cost(power_rating,hours_used):
+    consumption = (power_rating * hours_used)/1000 #Formula to calculate monthly electricity consumption
+    cost =  consumption * (0.2156)#Formula to calculate monthly energy cost
+    print('Monthly Consumption Cost:',cost ) #Modify to display the calculated energy cost value
+
+    return cost 
+
+calculate_cost(power_rating,hours_used) 
