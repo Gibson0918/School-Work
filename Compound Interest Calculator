@@ -1,0 +1,16 @@
+p = int(input('What is your principal amount?'))#asking the user for his principal amount
+r = float(input('What is the annual nominal interest rate?'))#asking the user for the interest rate
+n = int(input('What is the number of times the interest is compounded per year?'))#asking the user for the number of times the interest is compounded per year
+t = int(input('What is the number of years?'))#asking the user for the number of years
+
+
+
+#Perform calculation for final amount 
+def calculate_final_amount(p,r,n,t):
+     
+    amount = p*(1+(r/n))**(n*t)#Formula to calculate final amount
+    print('amount',amount) #Modify to display the calculated final amount value
+
+    return amount 
+
+calculate_final_amount(p,r,n,t)
