@@ -1,0 +1,93 @@
+#Programming I
+
+#######################
+#     Mission 6.2     #
+#       Digipet       #
+#######################
+
+#Background
+#==========
+#With the Pokémon going all rage these days, Tom wants to create
+#his own digital pet. In the digital pet, there are options to
+#check the status of the pet, feed the pet, play with the pet, or
+#let the pet rests. In the status section, player can see the pet’s
+#level of hungriness, happiness, and energy. Each status can have
+#a maximum level of 5 stars indicating full, or minimum 5 dots if
+#the level is empty. If the player feeds the pet, the hungriness
+#level will go up by 1 star, meanwhile causing the other 2 status
+#to drop by 1 star. If the player plays with the pet, the happiness
+#will go up by 1 star, while the other 2 will go down by 1 star.
+#Likewise, if the player let the pet rests, the energy goes up by
+#1 star, and the other 2 indicators will drop by 1 star.
+#
+#Write a Python program that allows the player to interact with
+#the digital pet as described above. 
+
+
+
+def start_pet():
+    hungry =' ***..'
+    happiness = '***..'
+    energy = '***..'
+    
+    while True:
+
+        for i in range(1):
+
+            q = happiness.count('*')
+            w = energy.count('*')
+            e = hungry.count('*')
+            if  e== 0:
+                e = hungry.count('*')+1
+            if q == 0:
+                q = happiness.count('*')+1
+            if w == 0:
+                w = energy.count('*')+1
+            
+            print('Digipet')
+            print('(1)  Feed')
+            print('(2)  Play')
+            print('(3)  Rest')
+            print('(4)  Status')
+            option = input('Please select an option:')
+
+            
+            if option == '1':
+                print('Nom nom nom')
+                
+                hungry = hungry.replace('.','*',1)
+                happiness = happiness.replace('*','.')
+                happiness = happiness.replace('.','*',q-1)
+                energy = energy.replace('*','.')
+                energy = energy.replace('.','*',w-1)
+               
+            elif option == '2':
+                 print('XD')
+                 hungry = hungry.replace('*','.')
+                 hungry = hungry.replace('.','*',e-1)
+                 happiness = happiness.replace('.','*',1)
+        
+                 energy = energy.replace('*','.',)
+                 energy = energy.replace('.','*',w-1)
+                 
+            elif option =='3':
+                 print('Zzzzzz')
+                 hungry = hungry.replace('*','.')
+                 hungry = hungry.replace('.','*',e-1)
+                 happiness = happiness.replace('*','.')
+                 happiness = happiness.replace('.','*',q-1)
+                 energy = energy.replace('.','*',1)
+                
+               
+            elif option =='4':
+                #hungry_new = hungry
+             #   happiness_new = happiness
+              #  energy_new = energy
+                print('{:12s}{:5s}'.format('hungry',hungry))
+                print('{:12s}{:5s}'.format('happiness',happiness))
+                print('{:12s}{:5s}'.format('energy',energy))             
+            
+            else:
+                continue
+        
+start_pet()
